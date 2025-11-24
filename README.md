@@ -19,9 +19,7 @@ Example output:
 <pre><code>[ { "scenario": "Valid discount code applied", "input": { "discount-code": "SAVE15" }, "expected_output": { "discount-applied": 15, "final-total": 85.00 } } ]</code></pre> </section>
 <section> <h2>🤖 <strong>Generating Selenium Scripts</strong></h2> <p>Choose a test case — the agent generates a fully runnable Selenium test:</p> <pre><code>driver.find_element(By.ID, "discount-code").send_keys("SAVE15") driver.find_element(By.ID, "apply-discount").click() assert float(driver.find_element(By.ID, "total-price").text) == 85.00 </code></pre>
 
-Scripts are stored in:
-
-generated_scripts/
+copy the selenium code and Execute it.
 
 </section>
 <section> <h2>🛠 <strong>Run the Selenium Test</strong></h2>
@@ -36,4 +34,4 @@ The script:
 <section> <h2>📦 <strong>Dependencies</strong></h2> <ul> <li>Python 3.10+</li> <li>Selenium WebDriver</li> <li>Streamlit</li> <li>Requests</li> <li>BeautifulSoup4</li> <li>ChromaDB</li> </ul> </section>
 <section> <h2>🔐 <strong>.gitignore</strong></h2> <pre><code> .venv/ __pycache__/ .env backend/chroma_db/ generated_scripts/ test_results/ .vscode/ .DS_Store </code></pre> </section>
 <section> <h2>👨‍💻 <strong>Author</strong></h2> <p> <strong>Jagadeeswar Pattupogula</strong><br> B.Tech CSE Student • AI & Automation Enthusiast<br> Focused on building intelligent QA tools and automation systems. </p> </section>
-<section> <h2>📄 <strong>License</strong></h2> <p>MIT License</p> </section>
+
