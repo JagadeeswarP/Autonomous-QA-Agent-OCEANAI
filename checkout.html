@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Shop Checkout</title>
+    <style>
+        .error { color: red; }
+        #pay-now { background: green; color: white; padding: 10px; }
+    </style>
+</head>
+<body>
+
+<h2>E-Shop Checkout</h2>
+
+<!-- Products -->
+<div>
+    <h3>Products</h3>
+    <div>
+        <p>Product A - $100 
+            <button id="add-a">Add to Cart</button>
+        </p>
+        <p>Product B - $150 
+            <button id="add-b">Add to Cart</button>
+        </p>
+    </div>
+</div>
+
+<!-- Cart Summary -->
+<div>
+    <h3>Cart Summary</h3>
+    <label>Item A Qty: </label>
+    <input id="qty-a" type="number" min="0" value="0">
+
+    <label>Item B Qty: </label>
+    <input id="qty-b" type="number" min="0" value="0">
+
+    <p>Total: $<span id="total-price">0.00</span></p>
+</div>
+
+<!-- Discount Code -->
+<div>
+    <h3>Discount Code</h3>
+    <input id="discount-code" type="text" placeholder="Enter code">
+    <button id="apply-discount">Apply</button>
+    <p id="discount-error" class="error"></p>
+</div>
+
+<!-- User Details -->
+<div>
+    <h3>User Details</h3>
+    <input id="name" type="text" placeholder="Full Name">
+    <p id="name-error" class="error"></p>
+
+    <input id="email" type="email" placeholder="Email">
+    <p id="email-error" class="error"></p>
+
+    <input id="address" type="text" placeholder="Address">
+    <p id="address-error" class="error"></p>
+</div>
+
+<!-- Shipping -->
+<div>
+    <h3>Shipping Method</h3>
+    <input type="radio" name="ship" id="ship-standard" checked> Standard (Free)
+    <input type="radio" name="ship" id="ship-express"> Express ($10)
+</div>
+
+<!-- Payment Method -->
+<div>
+    <h3>Payment Method</h3>
+    <input type="radio" name="pay" id="pay-card" checked> Credit Card
+    <input type="radio" name="pay" id="pay-paypal"> PayPal
+</div>
+
+<!-- Pay Button -->
+<button id="pay-now">Pay Now</button>
+<p id="payment-message"></p>
+
+<script>
+// ---------------- CART + DISCOUNT LOGIC ---------------- //
+
+function calculateTotal() {
+    let qtyA = parseInt(document.getElementById("qty-a").value) || 0;
+    let qtyB = parseInt(document.getElementById("qty-b").value) || 0;
+
+    let subtotal = (qtyA * 100) + (qtyB * 150);
+
+    let discountCode = document.getElementById("discount-code").value.trim().toUpperCase();
+    let discountError = document.getElementById("discount-error");
+    let discountApplied = 0;
+
+    // Discount Logic
+    if (discountCode === "SAVE15") {
+        discountApplied = subtotal * 0.15;
+        discountError.innerText = "";
+    } else if (discountCode.length === 0) {
+        discountError.innerText = "";
+    } else {
+        discountError.innerText = "Invalid discount code";
+    }
+
+    let finalTotal = subtotal - discountApplied;
+    document.getElementById("total-price").innerText = finalTotal.toFixed(2);
+}
+
+document.getElementById("apply-discount").addEventListener("click", calculateTotal);
+document.getElementById("qty-a").addEventListener("input", calculateTotal);
+document.getElementById("qty-b").addEventListener("input", calculateTotal);
+
+document.getElementById("add-a").addEventListener("click", function () {
+    let qty = document.getElementById("qty-a");
+    qty.value = parseInt(qty.value) + 1;
+    calculateTotal();
+});
+
+document.getElementById("add-b").addEventListener("click", function () {
+    let qty = document.getElementById("qty-b");
+    qty.value = parseInt(qty.value) + 1;
+    calculateTotal();
+});
+
+
+document.getElementById("pay-now").addEventListener("click", function () {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const address = document.getElementById("address").value.trim();
+
+    document.getElementById("name-error").innerText = "";
+    document.getElementById("email-error").innerText = "";
+    document.getElementById("address-error").innerText = "";
+
+    let hasError = false;
+
+    if (name === "") {
+        document.getElementById("name-error").innerText = "Name is required";
+        hasError = true;
+    }
+    if (email === "" || !email.includes("@")) {
+        document.getElementById("email-error").innerText = "Valid email is required";
+        hasError = true;
+    }
+    if (address === "") {
+        document.getElementById("address-error").innerText = "Address is required";
+        hasError = true;
+    }
+
+    if (hasError) {
+        document.getElementById("payment-message").innerText = "";
+        return;
+    }
+
+    document.getElementById("payment-message").innerText = "Payment Successful!";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Environment variables
+.env
+
+# Vector DB (your chroma_db folder)
+backend/chroma_db/
+
+# Streamlit cache
+.streamlit/
+
+# Generated Selenium scripts and results (if you create these)
+generated_scripts/
+test_results/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/

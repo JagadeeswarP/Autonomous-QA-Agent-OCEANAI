@@ -1,0 +1,50 @@
+{
+  "applyDiscount": {
+    "method": "POST",
+    "path": "/apply-discount",
+    "request_body": {
+      "discount": "string",
+      "subtotal": "number"
+    },
+    "response": {
+      "isValid": "boolean",
+      "discountedTotal": "number",
+      "message": "string"
+    }
+  },
+
+  "calculateTotal": {
+    "method": "POST",
+    "path": "/calculate-total",
+    "request_body": {
+      "qtyA": "number",
+      "qtyB": "number",
+      "discount": "string"
+    },
+    "response": {
+      "subtotal": "number",
+      "discountApplied": "number",
+      "finalTotal": "number"
+    }
+  },
+
+  "submitPayment": {
+    "method": "POST",
+    "path": "/submit-payment",
+    "request_body": {
+      "name": "string",
+      "email": "string",
+      "address": "string",
+      "paymentMethod": "string",
+      "shippingMethod": "string",
+      "cart": {
+        "qtyA": "number",
+        "qtyB": "number"
+      }
+    },
+    "response": {
+      "success": "boolean",
+      "message": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+UI/UX Guidelines for Checkout Page
+
+1. Input Field Behavior
+   - All input fields must show red error text below them when invalid.
+   - Discount error message must be displayed in red using the "error" class.
+
+2. Buttons
+   - "Pay Now" button must be green (#00A000 or similar) with white text.
+   - "Apply" button must be placed next to the discount field.
+   - Add-to-cart buttons must instantly update the quantity fields.
+
+3. Discount Code Field
+   - Must allow typing any string.
+   - Error message should appear only when an invalid code is applied.
+   - Trimming spaces should happen automatically when checking the code.
+
+4. Total Price
+   - Updated total must always be visible.
+   - Value is displayed in the element with id="total-price".
+   - Should always show two decimal places.
+
+5. Form Validation (Name, Email, Address)
+   - Errors appear immediately when the Pay Now button is clicked with invalid fields.
+   - Success message must appear below Pay Now when payment is valid.
+
+6. Layout
+   - Section titles should use <h3> for consistency.
+   - Summary sections should group logically (Products → Cart → Discount → Details → Shipping → Payment).
