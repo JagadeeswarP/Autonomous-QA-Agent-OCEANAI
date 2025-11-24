@@ -35,5 +35,5 @@ The script:
 <ul> <li>Opens your browser</li> <li>Loads checkout.html</li> <li>Inputs values</li> <li>Clicks buttons</li> <li>Reads totals</li> <li>Validates assertions</li> <li>Prints PASS / FAIL</li> </ul> </section>
 <section> <h2>📦 <strong>Dependencies</strong></h2> <ul> <li>Python 3.10+</li> <li>Selenium WebDriver</li> <li>Streamlit</li> <li>Requests</li> <li>BeautifulSoup4</li> <li>ChromaDB</li> </ul> </section>
 <section> <h2>🔐 <strong>.gitignore</strong></h2> <pre><code> .venv/ __pycache__/ .env backend/chroma_db/ generated_scripts/ test_results/ .vscode/ .DS_Store </code></pre> </section>
-<section> <h2>👨‍💻 <strong>Author</strong></h2> <p> <strong>Salaar</strong><br> B.Tech CSE Student • AI & Automation Enthusiast<br> Focused on building intelligent QA tools and automation systems. </p> </section>
+<section> <h2>👨‍💻 <strong>Author</strong></h2> <p> <strong>Jagadeeswar Pattupogula</strong><br> B.Tech CSE Student • AI & Automation Enthusiast<br> Focused on building intelligent QA tools and automation systems. </p> </section>
 <section> <h2>📄 <strong>License</strong></h2> <p>MIT License</p> </section>
