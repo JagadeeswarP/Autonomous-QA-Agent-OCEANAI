@@ -23,7 +23,7 @@ interprets UI screens, generates <strong>test cases</strong>, produces <strong>S
 and lets you run them in a browser to validate PASS/FAIL results.
 </p>
 
-<p>All outputs are fully grounded in your uploaded project files — no hallucinations.</p>
+<p>All outputs are fully grounded in this uploaded project files — no hallucinations.</p>
 
 <hr>
 
