@@ -4,7 +4,7 @@
 <body>
 <div class="container">
 
-<h1 align="center">✨ Autonomous QA Agent</h1>
+<h1 align="center"> Autonomous QA Agent</h1>
 <h3 align="center">AI-Powered Test Case Generator & Selenium Script Automation</h3>
 
 <p class="badge-row" align="center">
@@ -21,7 +21,7 @@ Here, I used Qwen3-1.7B-GGUF (a very local small model), the script may not alwa
 But the architecture supports using stronger models like Qwen 14B or GPT-4, which generate highly accurate automation scripts.
 </p>
 
-<h2>🚀 Overview</h2>
+<h2> Overview</h2>
 <p>
 This project is an <strong>Autonomous QA Agent</strong> that automatically reads documentation,
 interprets UI screens, generates <strong>test cases</strong>, produces <strong>Selenium scripts</strong>,
@@ -32,7 +32,7 @@ and lets you run them in a browser to validate PASS/FAIL results.
 
 <hr>
 
-<h2>🧠 How It Works</h2>
+<h2> How It Works</h2>
 
 <pre>
 Docs + HTML → LLM → JSON Test Cases
@@ -44,7 +44,7 @@ Script → Browser → PASS / FAIL
 
 <hr>
 
-<h2>📁 Project Structure</h2>
+<h2> Project Structure</h2>
 
 <pre>
 autonomous-qa-agent/
@@ -92,14 +92,14 @@ MODEL_NAME=qwen3-1.7b:2
 
 <h2>▶️ Running the Project</h2>
 
-<h3>🔥 Start FastAPI backend</h3>
+<h3> Start FastAPI backend</h3>
 <pre><code>cd backend
 uvicorn app:app --reload</code></pre>
 
 <p>Backend runs at:</p>
 <pre><code>http://127.0.0.1:8000</code></pre>
 
-<h3>🎨 Start Streamlit frontend</h3>
+<h3> Start Streamlit frontend</h3>
 <pre><code>cd ui
 streamlit run streamlit_app.py</code></pre>
 
@@ -108,7 +108,7 @@ streamlit run streamlit_app.py</code></pre>
 
 <hr>
 
-<h2>🧪 Generate Test Cases</h2>
+<h2> Generate Test Cases</h2>
 
 <p>Example prompt:</p>
 
@@ -125,7 +125,7 @@ streamlit run streamlit_app.py</code></pre>
 
 <hr>
 
-<h2>🤖 Generate Selenium Scripts</h2>
+<h2> Generate Selenium Scripts</h2>
 
 <p>Paste test case JSON → Receive fully runnable Selenium code:</p>
 
@@ -140,7 +140,7 @@ assert driver.find_element(By.ID, "discount-error").text == ""
 
 <hr>
 
-<h2>🛠 Running a Selenium Test</h2>
+<h2> Running a Selenium Test</h2>
 
 <pre><code>python generated_scripts/TC-001.py</code></pre>
 
@@ -154,7 +154,7 @@ assert driver.find_element(By.ID, "discount-error").text == ""
 
 <hr>
 
-<h2>📦 Dependencies</h2>
+<h2> Dependencies</h2>
 
 <ul>
   <li>Python 3.10+</li>
@@ -168,7 +168,7 @@ assert driver.find_element(By.ID, "discount-error").text == ""
 
 <hr>
 
-<h2>📝 Support Documents Explanation</h2>
+<h2> Support Documents Explanation</h2>
 
 <table border="1" cellspacing="0" cellpadding="8">
 <tr><th>File</th><th>Purpose</th></tr>
