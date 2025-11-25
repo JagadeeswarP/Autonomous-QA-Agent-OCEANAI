@@ -15,6 +15,11 @@
 </p>
 
 <hr>
+<h2>NOTE</h2>
+<p>
+Here, I used Qwen3-1.7B-GGUF (a very small model), the script may not always be perfect.
+But the architecture supports using stronger models like Qwen 14B or GPT-4, which generate highly accurate automation scripts.
+</p>
 
 <h2>🚀 Overview</h2>
 <p>
